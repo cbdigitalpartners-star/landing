@@ -50,13 +50,8 @@ header {
   letter-spacing: -0.02em;
   font-size: 1.05rem;
 }
-.logo-mark {
-  width: 30px; height: 30px;
-  border-radius: 9px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  display: grid; place-items: center;
-  color: #fff; font-weight: 800; font-size: 0.85rem;
-}
+.brand img { height: 32px; width: auto; display: block; }
+.foot .brand img { height: 34px; }
 .nav-links { display: flex; gap: 28px; font-size: 0.92rem; color: var(--muted); }
 .nav-links a:hover { color: var(--ink); }
 .nav-cta {
