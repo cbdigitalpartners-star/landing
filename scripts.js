@@ -1,4 +1,29 @@
 // C&B Digital Partners — progressive enhancement (delight only, no core deps)
+
+// Theme toggle — flips light/dark, persists choice, defaults to system.
+(function () {
+  var btn = document.querySelector(".theme-toggle");
+  if (!btn) return;
+  var root = document.documentElement;
+
+  function resolved() {
+    if (root.classList.contains("theme-dark")) return "dark";
+    if (root.classList.contains("theme-light")) return "light";
+    return (window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  }
+  function sync() { btn.setAttribute("aria-pressed", String(resolved() === "dark")); }
+  sync();
+
+  btn.addEventListener("click", function () {
+    var next = resolved() === "dark" ? "light" : "dark";
+    root.classList.remove("theme-dark", "theme-light");
+    root.classList.add("theme-" + next);
+    try { localStorage.setItem("cb-theme", next); } catch (e) { /* storage blocked */ }
+    sync();
+  });
+})();
+
 (function () {
   "use strict";
 
