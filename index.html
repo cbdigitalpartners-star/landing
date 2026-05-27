@@ -19,17 +19,18 @@
   <meta name="twitter:image" content="https://www.cbdigitalpartners.cl/assets/og-banner.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a href="#main" class="skip-link">Saltar al contenido</a>
   <div class="scroll-progress" aria-hidden="true"></div>
   <header>
     <div class="wrap nav">
       <a href="index.html" class="brand" aria-label="C&amp;B Digital Partners">
         <img src="assets/logo-clean.png" alt="C&amp;B Digital Partners" width="160" height="32" />
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
         <a href="#soluciones">Soluciones</a>
         <a href="#nosotros">Nosotros</a>
@@ -39,7 +40,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="hero-deco" aria-hidden="true">
         <svg viewBox="0 0 560 460" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,13 +129,16 @@
         <div class="solutions">
           <article class="card sol-feature">
             <div class="sol-feature-media">
-              <img src="assets/gastus-logo.png" alt="Gastus" />
+              <picture>
+                <source srcset="assets/gastus-logo.webp" type="image/webp" />
+                <img src="assets/gastus-logo.png" alt="Logo de Gastus" width="560" height="476" loading="lazy" decoding="async" />
+              </picture>
             </div>
             <div class="sol-feature-body">
               <span class="tag">Fintech · En producción</span>
               <h3>Gastus — Finanzas personales</h3>
               <p>Importa cartolas de los principales bancos chilenos, categoriza movimientos con IA y detecta gastos recurrentes. Cifrado a nivel de campo y sin pedir nunca las claves de la banca en línea.</p>
-              <a href="https://gastus.cl" target="_blank" rel="noopener" class="card-link">Visitar gastus.cl →</a>
+              <a href="https://gastus.cl" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Visitar gastus.cl (abre en una pestaña nueva)">Visitar gastus.cl →</a>
             </div>
           </article>
           <div class="sol-grid">
@@ -152,7 +156,7 @@
               <span class="tag">Educación · Salud</span>
               <h3>Colegio Contempora — Plataforma escolar</h3>
               <p>Plataforma multi-institución en una sola base: gestión escolar (cursos, calificaciones, asistencia, conducta) y centro de terapia infantil (citas, diagnósticos y actividades para casa).</p>
-              <a href="https://colegia.colegiocontempora.com/" target="_blank" rel="noopener" class="card-link">Visitar el sitio →</a>
+              <a href="https://colegia.colegiocontempora.com/" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Visitar el sitio de Colegio Contempora (abre en una pestaña nueva)">Visitar el sitio →</a>
             </article>
           </div>
         </div>
@@ -202,17 +206,17 @@
           </a>
           <p>Desarrollo de software a medida: plataformas web, portales, integraciones y automatización.</p>
         </div>
-        <div class="foot-links">
+        <nav class="foot-links" aria-label="Enlaces del pie de página">
           <a href="#servicios">Servicios</a>
           <a href="#soluciones">Soluciones</a>
           <a href="#nosotros">Nosotros</a>
           <a href="privacidad.html">Privacidad</a>
           <a href="terminos.html">Términos</a>
-        </div>
+        </nav>
       </div>
       <div class="foot-bottom">
         <span>© 2026 C&amp;B Digital Partners. Todos los derechos reservados.</span>
-        <span>Santiago, Chile · contacto@cbdigitalpartners.cl</span>
+        <span>Santiago, Chile · <a href="mailto:contacto@cbdigitalpartners.cl">contacto@cbdigitalpartners.cl</a></span>
       </div>
     </div>
   </footer>

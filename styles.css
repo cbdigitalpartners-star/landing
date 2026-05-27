@@ -69,6 +69,16 @@ a { color: inherit; text-decoration: none; }
   border-radius: 4px;
 }
 
+/* Skip link — first focusable, hidden until focused */
+.skip-link {
+  position: absolute; left: 12px; top: -64px; z-index: 200;
+  background: var(--ink); color: #fff;
+  padding: 10px 16px; border-radius: 10px;
+  font-weight: 600; font-size: var(--text-sm);
+  transition: top 0.18s ease;
+}
+.skip-link:focus { top: 12px; }
+
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
 /* ---------- Header ---------- */
@@ -283,6 +293,7 @@ section.block { padding: var(--space-xl) 0; }
   display: grid; place-items: center;
   padding: clamp(1.5rem, 4vw, 3rem);
 }
+.sol-feature-media picture { display: contents; }
 .sol-feature-media img { width: 100%; max-width: 280px; height: auto; object-fit: contain; }
 .sol-feature-body h3 { font-size: var(--text-xl); letter-spacing: -0.02em; margin: 12px 0 10px; }
 .sol-feature-body p { color: var(--muted); font-size: var(--text-base); }
@@ -370,6 +381,9 @@ footer {
   font-size: var(--text-xs); color: var(--muted);
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
 }
+.foot-bottom span { overflow-wrap: anywhere; }
+.foot-bottom a { color: inherit; }
+.foot-bottom a:hover { color: var(--ink); }
 
 /* ---------- Legal pages ---------- */
 .legal { padding: 64px 0 40px; }
@@ -449,4 +463,23 @@ footer {
   .card:hover, .btn-primary:hover { transform: none; }
   .reveal { opacity: 1 !important; transform: none !important; }
   .scroll-progress { display: none; }
+}
+
+/* ---------- High-contrast / forced colors ---------- */
+@media (forced-colors: active) {
+  .card, .sol-feature-media, .trust-item { border: 1px solid CanvasText; }
+  .scroll-progress { background: Highlight; }
+  :focus-visible { outline-color: Highlight; }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  .scroll-progress, .hero-deco, .nav-links, .nav-cta, .skip-link { display: none !important; }
+  header { position: static; border: none; }
+  .hero { background: none; padding: 1rem 0; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  body { color: #000; background: #fff; }
+  a { color: #000; }
+  .card { break-inside: avoid; box-shadow: none; }
 }
