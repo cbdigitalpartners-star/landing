@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f8fc" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0e1a" />
   <title>C&amp;B Digital Partners — Desarrollo de software a medida</title>
   <meta name="description" content="Estudio de desarrollo de software en Chile. Construimos plataformas web, portales, software financiero e integraciones a medida — de calidad, seguras y listas para producción." />
   <meta property="og:type" content="website" />
@@ -134,10 +136,24 @@
         <div class="solutions">
           <article class="card sol-feature">
             <div class="sol-feature-media">
-              <picture>
-                <source srcset="assets/gastus-logo.webp" type="image/webp" />
-                <img src="assets/gastus-logo.png" alt="Logo de Gastus" width="560" height="476" loading="lazy" decoding="async" />
-              </picture>
+              <div class="gastus-mock" aria-hidden="true">
+                <div class="gm-head">
+                  <picture>
+                    <source srcset="assets/gastus-logo.webp" type="image/webp" />
+                    <img src="assets/gastus-logo.png" alt="" class="gm-logo" width="560" height="476" loading="lazy" decoding="async" />
+                  </picture>
+                  <span class="gm-chip">Saldo del mes</span>
+                </div>
+                <div class="gm-balance" data-value="1247500">$1.247.500</div>
+                <ul class="gm-bars">
+                  <li class="gm-bar"><span>Alimentación</span><i style="--w: 82%"></i></li>
+                  <li class="gm-bar"><span>Transporte</span><i style="--w: 54%"></i></li>
+                  <li class="gm-bar"><span>Servicios</span><i style="--w: 37%"></i></li>
+                </ul>
+                <svg class="gm-spark" viewBox="0 0 260 56" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M0 44 L37 30 L74 36 L111 18 L148 24 L185 10 L222 16 L260 6" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
             </div>
             <div class="sol-feature-body">
               <span class="tag">Fintech · En producción</span>
@@ -194,9 +210,27 @@
     <section class="block" id="contacto">
       <div class="wrap">
         <div class="cta-band">
+          <svg class="cta-circuit" viewBox="0 0 600 260" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M0 44 H120 V92 H232" stroke="var(--accent)" />
+              <path d="M0 126 H188" stroke="color-mix(in srgb, var(--band-text) 22%, transparent)" />
+              <path d="M0 210 H140 V156 H252" stroke="color-mix(in srgb, var(--band-text) 22%, transparent)" />
+              <path d="M600 44 H480 V92 H368" stroke="color-mix(in srgb, var(--band-text) 22%, transparent)" />
+              <path d="M600 126 H412" stroke="var(--accent)" />
+              <path d="M600 210 H460 V156 H348" stroke="color-mix(in srgb, var(--band-text) 22%, transparent)" />
+            </g>
+            <g>
+              <circle cx="232" cy="92" r="4" fill="var(--accent)" />
+              <circle cx="188" cy="126" r="4" fill="color-mix(in srgb, var(--band-text) 50%, transparent)" />
+              <circle cx="252" cy="156" r="4" fill="color-mix(in srgb, var(--band-text) 50%, transparent)" />
+              <circle cx="368" cy="92" r="4" fill="color-mix(in srgb, var(--band-text) 50%, transparent)" />
+              <circle cx="412" cy="126" r="4" fill="var(--accent)" />
+              <circle cx="348" cy="156" r="4" fill="color-mix(in srgb, var(--band-text) 50%, transparent)" />
+            </g>
+          </svg>
           <h2>¿Tienes un proyecto de software en mente?</h2>
           <p>Escríbenos y armamos una propuesta a la medida de tu negocio.</p>
-          <a href="mailto:contacto@cbdigitalpartners.cl" class="btn btn-primary">contacto@cbdigitalpartners.cl</a>
+          <a href="mailto:contacto@cbdigitalpartners.cl" class="btn btn-primary magnetic">contacto@cbdigitalpartners.cl</a>
         </div>
       </div>
     </section>
