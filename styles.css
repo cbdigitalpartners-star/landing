@@ -128,7 +128,26 @@ section.block { padding: 80px 0; }
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
-@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 860px) { .grid, .grid-2 { grid-template-columns: 1fr; } }
+
+/* Alternate section background */
+section.block.alt {
+  background: linear-gradient(180deg, #eef1fb 0%, var(--paper) 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Solution card tag pill */
+.card .tag {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(79,107,255,0.10);
+  padding: 4px 10px; border-radius: 999px;
+  margin-bottom: 14px;
+}
 
 .card {
   background: var(--white);
