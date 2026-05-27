@@ -72,3 +72,29 @@
   });
   hero.addEventListener("pointerleave", function () { txT = tyT = rotT = 0; kick(); });
 })();
+
+// Scrollspy: light the nav link of the section in view. IntersectionObserver,
+// not scroll events — event-driven, no per-frame work.
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+
+  var links = {};
+  document.querySelectorAll(".nav-links a[href^='#']").forEach(function (a) {
+    links[a.getAttribute("href").slice(1)] = a;
+  });
+  var sections = [].slice.call(document.querySelectorAll("section[id]"))
+    .filter(function (s) { return links[s.id]; });
+  if (!sections.length) return;
+
+  function setActive(id) {
+    for (var key in links) links[key].classList.toggle("is-active", key === id);
+  }
+
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+
+  sections.forEach(function (s) { spy.observe(s); });
+})();

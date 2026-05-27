@@ -414,6 +414,24 @@ footer {
 .reveal-on .trust-item:nth-child(2).reveal { transition-delay: 0.08s; }
 .reveal-on .trust-item:nth-child(3).reveal { transition-delay: 0.16s; }
 
+/* ---------- App-grade scroll chrome ---------- */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px;
+  transform-origin: 0 50%; transform: scaleX(0);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  z-index: 100;
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: scrollProgress linear both;
+    animation-timeline: scroll(root block);
+  }
+  @keyframes scrollProgress { to { transform: scaleX(1); } }
+}
+/* Scrollspy active nav link (toggled by scripts.js) */
+.nav-links a.is-active { color: var(--ink); }
+.nav-links a.is-active::after { transform: scaleX(1); }
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -424,4 +442,5 @@ footer {
   }
   .card:hover, .btn-primary:hover { transform: none; }
   .reveal { opacity: 1 !important; transform: none !important; }
+  .scroll-progress { display: none; }
 }
